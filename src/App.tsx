@@ -207,7 +207,7 @@ function AppRoutes() {
                   >
                     Login
                   </NavLink>
-                  <NavLink
+                  {/* <NavLink
                     to="/signup"
                     className={({ isActive }) => 
                       isActive 
@@ -216,7 +216,7 @@ function AppRoutes() {
                     }
                   >
                     Sign Up
-                  </NavLink>
+                  </NavLink> */}
                 </>
               )}
             </div>
