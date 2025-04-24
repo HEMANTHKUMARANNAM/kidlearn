@@ -13,6 +13,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tensorflow/tfjs": "^4.17.0",
+    "face-api.js": "^0.22.2",
+
+
     "@firebase/auth": "^1.10.0",
     "firebase": "^11.6.0",
     "gh-pages": "^6.3.0",
@@ -20,7 +24,9 @@
     "mathjs": "^14.4.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.22.3"
+    "react-router-dom": "^6.22.3",
+     "framer-motion": "^11.0.8",
+    "use-sound": "^4.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
