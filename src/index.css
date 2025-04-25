@@ -57,3 +57,32 @@ body {
     @apply text-3xl font-bold text-center mb-6 text-primary-700;
   }
 }
+
+
+
+/* Animation utilities */
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-in {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-fill-mode: both;
+  will-change: transform, opacity;
+}
+
+.slide-in-from-right-8 {
+  animation-name: slideInFromRight;
+}
+
+.duration-300 {
+  animation-duration: 300ms;
+}

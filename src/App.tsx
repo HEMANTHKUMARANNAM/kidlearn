@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Routes, Route, NavLink, Navigate } from 'react-router-dom';
+import { Routes, Route, NavLink, Navigate, useNavigate, useLocation } from 'react-router-dom';
 import { Home, Leaf, Bird, Fish, Apple, Carrot, GraduationCap, Calculator, LogOut, CarTaxiFront, Flower2Icon, Loader, Gamepad2Icon, Menu, X } from 'lucide-react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import HomePage from './pages/HomePage';
 import AnimalsPage from './pages/AnimalsPage';
@@ -79,6 +81,24 @@ function AppRoutes() {
   const [currentEmotion, setCurrentEmotion] = useState<EmotionResults | null>(null);
   const { currentUser, logout } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [lastSadToastTime, setLastSadToastTime] = useState(0);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Define game paths for checking current location
+  const gamePaths = [
+    '/games', 
+    '/memory-game', 
+    '/whack-a-mole', 
+    '/coloring-book', 
+    '/simple-puzzle', 
+    '/balloon-pop', 
+    '/word-search', 
+    '/counting-game', 
+    '/shape-sorter', 
+    '/catch-stars', 
+    '/animal-sounds'
+  ];
 
   useEffect(() => {
     const initializeModels = async () => {
@@ -125,6 +145,52 @@ function AppRoutes() {
     };
   }, [videoElement, isModelLoaded]);
 
+  // Custom toast for sad emotion with redirect
+  const showSadEmotionToast = () => {
+    // Using React Toastify's toast.info with autoClose and custom styling
+    return toast.info(
+      <div className="flex items-center">
+        <span className="text-xl mr-2">😢</span>
+        <p>Looks like you're feeling sad. Taking you to games to cheer you up!</p>
+      </div>,
+      {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        onClose: () => navigate('/games'),
+        className: 'bg-blue-50',
+        bodyClassName: 'text-blue-700',
+        progressClassName: 'bg-blue-500',
+      }
+    );
+  };
+
+  // Updated effect for handling sad emotion detection with rate limiting
+  useEffect(() => {
+    // Check if current path is already a game path
+    const isOnGamePath = gamePaths.some(path => location.pathname === path);
+    
+    // Current time for rate limiting
+    const now = Date.now();
+    const cooldownPeriod = 30000; // 30 seconds cooldown
+    
+    if (currentEmotion && 
+        currentEmotion.dominantEmotion === 'sad' && 
+        !isOnGamePath &&
+        now - lastSadToastTime > cooldownPeriod) {
+      
+      // Update last toast time for rate limiting
+      setLastSadToastTime(now);
+      
+      // Show the toastify notification which will handle redirect
+      showSadEmotionToast();
+    }
+  }, [currentEmotion, navigate, location.pathname, lastSadToastTime]);
+
   // Close mobile menu when navigating
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
@@ -156,6 +222,19 @@ function AppRoutes() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       <WebcamCapture onWebcamReady={setVideoElement} />
+      
+      {/* React Toastify Container */}
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
 
       {/* Fixed Navigation */}
       <nav className="fixed top-0 left-0 right-0 bg-white shadow-lg z-10">
@@ -209,12 +288,6 @@ function AppRoutes() {
                   <span className="text-xl mr-1">
                     {getEmotionEmoji(currentEmotion.dominantEmotion)}
                   </span>
-                  {/* <span className="font-medium capitalize" style={{ color: getEmotionColor(currentEmotion.dominantEmotion) }}>
-                    {currentEmotion.dominantEmotion}
-                  </span>
-                  <span className="ml-1 text-xs text-gray-500">
-                    {Math.round(currentEmotion.emotions[currentEmotion.dominantEmotion] * 100)}%
-                  </span> */}
                 </div>
               ) : (
                 <div className="flex items-center space-x-1 px-3 py-1 bg-gray-50 rounded-full text-gray-600 text-sm">
