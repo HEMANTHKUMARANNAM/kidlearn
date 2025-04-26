@@ -5,7 +5,7 @@ function AquaticPage() {
     <div className="max-w-7xl mx-auto px-4 py-12 bg-white">
       <h1 className="text-4xl font-bold mb-8">Aquatic Life</h1>
 
-      <section className="mb-12 ">
+      <section id="ocean-ecosystems" className="mb-12 ">
         <div className="bg-white rounded-lg shadow-md p-6 ">
           <h2 className="text-2xl font-semibold mb-6">Ocean Ecosystems</h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -38,7 +38,7 @@ function AquaticPage() {
         </div>
       </section>
 
-      <section className="grid md:grid-cols-2 gap-8 mb-12">
+      <section id="marine-mammals" className="grid md:grid-cols-2 gap-8 mb-12">
         <div className="bg-white rounded-lg shadow-md p-6">
           <h2 className="text-2xl font-semibold mb-4">Marine Mammals</h2>
           <img
@@ -52,7 +52,7 @@ function AquaticPage() {
             complex social structures, and haunting songs that can travel for miles underwater.
           </p>
         </div>
-        <div className="bg-white rounded-lg shadow-md p-6">
+        <div id="deep-sea" className="bg-white rounded-lg shadow-md p-6">
           <h2 className="text-2xl font-semibold mb-4">Deep Sea Creatures</h2>
           <img
             src="https://images.unsplash.com/photo-1545671913-b89ac1b4ac10"
@@ -66,10 +66,9 @@ function AquaticPage() {
           </p>
         </div>
       </section>
-
       
       <section className="grid md:grid-cols-2 gap-8 mb-12">
-        <div className="bg-white rounded-lg shadow-md p-6">
+        <div id="frogs" className="bg-white rounded-lg shadow-md p-6">
           <h2 className="text-2xl font-semibold mb-4">Amphibians</h2>
           <img
             src="https://images.unsplash.com/photo-1682097548906-88eff998ae17?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -85,7 +84,7 @@ function AquaticPage() {
             Frogs undergo a fascinating transformation from tadpoles to adults through metamorphosis, symbolizing growth and adaptability.   
           </p>
         </div>
-        <div className="bg-white rounded-lg shadow-md p-6">
+        <div id="mollusks" className="bg-white rounded-lg shadow-md p-6">
           <h2 className="text-2xl font-semibold mb-4">Mollusks</h2>
           <img
             src="https://plus.unsplash.com/premium_photo-1723733104322-827186b5eb9e?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -100,7 +99,7 @@ function AquaticPage() {
         </div>
       </section>
 
-      <section className="mb-12">
+      <section id="echinoderms" className="mb-12">
         <div className="bg-white rounded-lg shadow-md p-6">
           <h2 className="text-2xl font-semibold mb-6">Echinoderms</h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -113,10 +112,10 @@ function AquaticPage() {
               <h3 className="text-xl font-semibold mb-2">Sea urchins</h3>
               <p className="text-gray-700">
               Sea urchins are small, spiny marine animals found on the ocean floor, often in rocky or coral reef environments. 
-              They have round, hard shells called “tests,” which are covered in movable spines used for protection and movement. 
+              They have round, hard shells called "tests," which are covered in movable spines used for protection and movement. 
               Despite their slow pace, sea urchins play a vital role in marine ecosystems by grazing on algae, 
               helping maintain the balance of coral reefs. They move using tube feet and spines, and some species have specialized 
-              jaws called “Aristotle’s lantern” to scrape food off rocks. 
+              jaws called "Aristotle's lantern" to scrape food off rocks. 
               While some sea urchins are edible and considered a delicacy in many cultures, 
               others can be venomous and should be handled with care.
               </p>

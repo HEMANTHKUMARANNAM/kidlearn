@@ -38,6 +38,10 @@ import { loadModels, detectEmotion } from './utils/emotionUtils';
 import { EmotionResults } from './types/emotion';
 import { getEmotionEmoji, getEmotionColor } from './utils/emotionUtils';
 import FaceReg from './Face';
+import { VoiceNavigationProvider } from './contexts/VoiceNavigationContext';
+import { VoiceContext } from './contexts/VoiceContext';
+import VoiceAssistant from './components/VoiceAssistant';
+import VoiceControl from './components/VoiceControl';
 
 // Define theme colors for each navigation item
 const navColors = {
@@ -422,6 +426,8 @@ function AppRoutes() {
           <Route path="/catch-stars" element={<CatchStars />} />
           <Route path="/animal-sounds" element={<AnimalSounds />} />
         </Routes>
+        {/* <VoiceAssistant /> */}
+            <VoiceControl />
       </div>
     </div>
   );
@@ -430,7 +436,11 @@ function AppRoutes() {
 function App() {
   return (
     <AuthProvider>
+    <VoiceNavigationProvider>
+      <VoiceContext>
       <AppRoutes />
+      </VoiceContext>
+      </VoiceNavigationProvider>
     </AuthProvider>
   );
 }

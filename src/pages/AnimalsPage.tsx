@@ -1,5 +1,4 @@
 import React from 'react';
-import Quiz from '../components/Quiz';
 
 function AnimalsPage() {
 
@@ -7,7 +6,7 @@ function AnimalsPage() {
     <div className="max-w-7xl mx-auto px-4 py-12 bg-white">
       <h1 className="text-4xl font-bold mb-8">Land Animals</h1>
       
-      <section className="mb-12">
+      <section id="lions" className="mb-12">
         <h2 className="text-2xl font-semibold mb-6">Lions</h2>
         <div className="grid md:grid-cols-2 gap-8">
           <div>
@@ -41,7 +40,7 @@ function AnimalsPage() {
         </div>
       </section>
 
-      <section className="mb-12">
+      <section id="endangered-species" className="mb-12">
         <h2 className="text-2xl font-semibold mb-6">Endangered Species</h2>
         <div className="grid md:grid-cols-3 gap-6">
           <div className="bg-white rounded-lg shadow-md p-6">
@@ -83,7 +82,7 @@ function AnimalsPage() {
         </div>
       </section>
 
-      <section className="mb-12">
+      <section id="reptiles" className="mb-12">
         <h2 className="text-2xl font-semibold mb-6">Reptiles</h2>
         <div className="bg-white rounded-lg shadow-md p-6">
           <img
@@ -109,16 +108,16 @@ function AnimalsPage() {
         </div>
       </section>
 
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-6">Cheethah</h2>
+      <section id="cheethah" className="mb-12">
+        <h2 className="text-2xl font-semibold mb-6">Cheetah</h2>
         <div className="grid md:grid-cols-2 gap-8">
           <div>
             <img
               src="https://plus.unsplash.com/premium_photo-1664304362237-8040f0ecac98?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q0hFRVRBSFN8ZW58MHx8MHx8fDA%3D"
-              alt="Cheethah"
+              alt="Cheetah"
               className="rounded-lg mb-4 w-full h-64 object-cover"
             />
-            <h3 className="text-xl font-semibold mb-2">Cheethah</h3>
+            <h3 className="text-xl font-semibold mb-2">Cheetah</h3>
             <p className="text-gray-700">
             The cheetah (Acinonyx jubatus) is renowned as the fastest land animal, capable of accelerating from 0 to 70 km/h in
              just two seconds. This incredible speed is facilitated by its lightweight frame, long legs, and semi-retractable 
@@ -129,23 +128,22 @@ function AnimalsPage() {
             <iframe
               className="w-full h-64 rounded-lg mb-4"
               src="https://www.youtube.com/embed/k-Me1T9Pz40"
-              title="Cheethah Documentary"
+              title="Cheetah Documentary"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
-            <h3 className="text-xl font-semibold mb-2">Cheethah Behavior</h3>
+            <h3 className="text-xl font-semibold mb-2">Cheetah Behavior</h3>
             <p className="text-gray-700">
             You should watch this video because it shows a cheetah running in slow motion, 
-            letting you see every powerful movement as it sprints. It’s short, super clear, 
-            and beautifully filmed by BBC Earth. You’ll get to understand why cheetahs are the fastest animals on land, 
-            and it’s just really cool to watch how their bodies work in such an amazing way.
+            letting you see every powerful movement as it sprints. It's short, super clear, 
+            and beautifully filmed by BBC Earth. You'll get to understand why cheetahs are the fastest animals on land, 
+            and it's just really cool to watch how their bodies work in such an amazing way.
             </p>
           </div>
         </div>
       </section>
 
-
-      <section className="mb-12">
+      <section id="monkey" className="mb-12">
         <h2 className="text-2xl font-semibold mb-6">Monkey</h2>
         <div className="grid md:grid-cols-2 gap-8">
           <div>
@@ -175,10 +173,9 @@ function AnimalsPage() {
             <p className="text-gray-700">
             You should watch this video if you want to learn faster and understand complex topics better.
              It explains the Feynman Technique, a proven method to boost comprehension by simplifying concepts,
-              teaching them to others, and refining your knowledge. It’s short, practical, and offers clear examples,
-               making it useful for students, professionals, or anyone tackling new subjects. If you’re struggling with
+              teaching them to others, and refining your knowledge. It's short, practical, and offers clear examples,
+               making it useful for students, professionals, or anyone tackling new subjects. If you're struggling with
                 retention or clarity, this could help you study smarter.
-
             </p>
           </div>
         </div>
